@@ -39,6 +39,16 @@ jobs:
         with:
           use-public-rspm: true
           install-r: false
+          
+      - name: "Install bespoke varnish"
+        run: |
+          # Install pak
+          cat("::group::Install pak\n")
+          install.packages("devtools")
+          library("devtools")
+          install_github("Robadob/carpentries-varnish")
+          cat("::endgroup::\n")
+        shell: Rscript {0}
 
       - name: "Set up Pandoc"
         uses: r-lib/actions/setup-pandoc@v2
