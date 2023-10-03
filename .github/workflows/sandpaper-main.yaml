@@ -52,15 +52,7 @@ jobs:
         uses: carpentries/actions/setup-lesson-deps@main
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
-          
-      - name: "Install bespoke varnish"
-        run: |
-          remove.packages("varnish")
-          install.packages("devtools")
-          library("devtools")
-          install_github("Robadob/carpentries-varnish")
-        shell: Rscript {0}
-        
+
       - name: "Deploy Site"
         run: |
           reset <- "${{ github.event.inputs.reset }}" == "true"
