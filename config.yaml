@@ -74,5 +74,7 @@ profiles:
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
+varnish: robadob/carpentries-varnish@main
+url: 'robadob.github.io/pando-express'
 
 
